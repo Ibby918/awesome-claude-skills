@@ -1,109 +1,91 @@
 ---
 name: awesome-claude-skills
-description: >
-  Use this skill whenever the user wants to automate a SaaS application or connect Claude
-  to an external service. Trigger for requests involving specific apps like "automate Supabase",
-  "create a GitHub issue", "send a Slack message", "update a Notion page", "add a row to Google
-  Sheets", "create a Stripe customer", "automate Jira", or any request to integrate Claude
-  with one of 500+ supported services. Also trigger when the user asks "can Claude connect to X"
-  or "automate my workflow in Y app". Skip for pure coding tasks that don't involve external
-  service integration. Skip for general API questions not requiring Composio. When the user
-  mentions a specific app (Supabase, Stripe, GitHub, Slack, Notion, Google, Jira, etc.) in
-  the context of automation or integration — this skill covers it.
+description: Use when the user wants to automate or integrate a SaaS application — Supabase, Stripe, GitHub, Slack, Notion, Google Sheets, Jira, Gmail, or any of 500+ services. Triggers on "automate X in Y app", "connect Claude to Z service", "create a GitHub issue", "send a Slack message", "add a row to Google Sheets", or any SaaS integration request.
 ---
 
-# Awesome Claude Skills — 100+ Skills for Claude Code
+# Awesome Claude Skills — 100+ Skills for SaaS Automation
 
-A curated collection of skills for automation, development, data workflows and SaaS integrations.
-App automation (500+ services) powered by Composio.
+Curated collection covering development tools, SaaS automation, data workflows, and business
+integrations. App automation for 500+ services powered by Composio.
 
-## Categories
+## When to Use
 
-### Development & Code
-- `github-automation` — Issues, PRs, repos, branches, code search, actions
-- `gitlab-automation` — MRs, issues, projects, pipelines, branches
-- `supabase-automation` — SQL queries, tables, edge functions, storage buckets
-- `stripe-automation` — Charges, customers, products, subscriptions, refunds
-- `playwright-automation` — Browser testing and UI automation
-- `mcp-builder` — Guide for building MCP servers to connect any API
-- `changelog-generator` — User-facing changelogs from git commit history
-- `skill-creator` — Create new Claude skills
+- Automating a specific SaaS app (Stripe, Supabase, GitHub, Slack, Notion, etc.)
+- Connecting Claude Code to external services with real actions
+- Document processing (Word, PDF, Excel, PowerPoint)
 
-### Productivity & Files
-- `notion-automation` — Pages, databases, blocks, comments, search
-- `google-drive-automation` — Upload, download, search, share, organise
-- `one-drive-automation` — Files, folders, sharing, versioning
-- `file-organizer` — Intelligently organise files and folders
-- `invoice-organizer` — Organise invoices for tax prep
+**Skip when:** The task is pure coding with no external service integration.
 
-### Communication
-- `slack-automation` — Messages, channels, search, reactions, threads
-- `gmail-automation` — Send, reply, search, labels, drafts, attachments
-- `outlook-automation` — Emails, folders, contacts, calendar
-- `discord-automation` — Messages, channels, roles, reactions
-- `microsoft-teams-automation` — Messages, channels, meetings
+## Key Skills by Category
 
-### Data & Spreadsheets
-- `googlesheets-automation` — Read/write cells, formatting, formulas, batch ops
-- `airtable-automation` — Records, tables, bases, views, field management
-- `coda-automation` — Docs, tables, rows, formulas, automations
+### Development
+| Skill | What it does |
+|---|---|
+| `supabase-automation` | SQL queries, tables, edge functions, storage |
+| `github-automation` | Issues, PRs, repos, branches, code search |
+| `stripe-automation` | Charges, customers, products, subscriptions |
+| `mcp-builder` | Build MCP servers for any API |
+| `changelog-generator` | User-facing changelogs from git history |
+
+### Productivity
+| Skill | What it does |
+|---|---|
+| `notion-automation` | Pages, databases, blocks, comments |
+| `google-drive-automation` | Upload, download, search, share |
+| `slack-automation` | Messages, channels, reactions, threads |
+| `gmail-automation` | Send, reply, search, labels, drafts |
+| `googlesheets-automation` | Read/write cells, formulas, batch ops |
+
+### Documents
+| Skill | What it does |
+|---|---|
+| `docx` | Create, edit, analyse Word documents |
+| `pdf` | Extract, merge, annotate PDFs |
+| `xlsx` | Spreadsheets, formulas, charts |
+| `pptx` | Generate and read slide decks |
 
 ### Calendar & Scheduling
-- `google-calendar-automation` — Events, attendees, free/busy, recurring
-- `calendly-automation` — Events, scheduling links, availability
-
-### Analytics
-- `amplitude-automation` — Events, cohorts, user properties, analytics
-- `google-analytics-automation` — Reports, dimensions, metrics
-- `mixpanel-automation` — Events, funnels, cohorts, JQL
+`google-calendar-automation`, `calendly-automation`, `outlook-calendar-automation`
 
 ### Project Management
-- `jira-automation` — Issues, boards, sprints, JQL queries
-- `asana-automation` — Tasks, projects, sections, workspaces
-- `linear-automation` — Issues, projects, cycles, teams
-- `notion-automation` — Pages, databases, blocks
+`jira-automation`, `asana-automation`, `linear-automation`, `notion-automation`
 
 ### E-commerce & Payments
-- `stripe-automation` — Charges, customers, subscriptions, refunds
-- `shopify-automation` — Products, orders, customers, inventory
+`stripe-automation`, `shopify-automation`, `square-automation`
 
-### Document Processing
-- `docx` — Create, edit, analyse Word documents
-- `pdf` — Extract, merge, annotate PDFs
-- `xlsx` — Spreadsheet manipulation, formulas, charts
-- `pptx` — Read and generate slide decks
-
-## How to Use
+## Usage
 
 Skills auto-activate when you mention a supported app. Or ask directly:
 
 ```
-"Create a GitHub issue for this bug I found"
-"Add a row to my trading journal Google Sheet"
-"Send a Slack message to #trading-alerts with this signal"
-"Create a Stripe customer for this new user"
-"Query my Supabase database for all open trades"
+"Create a GitHub issue for this bug"
+"Add a row to my Google Sheet"
+"Send a Slack message to #trading-alerts"
+"Create a Stripe customer"
+"Query my Supabase DB for open trades"
 ```
 
 ## Installing Individual Skills
-
-To install a specific skill from this collection:
 
 ```bash
 /plugin install supabase-automation@awesome-claude-skills
 /plugin install stripe-automation@awesome-claude-skills
 /plugin install github-automation@awesome-claude-skills
-/plugin install googlesheets-automation@awesome-claude-skills
 ```
 
-## App Automation Setup (Composio)
+## App Authentication (Composio)
 
-For real app actions (send emails, create issues, post Slack messages), the
-`connect-apps` plugin from this collection handles authentication:
+Real actions (send emails, create issues, post messages) need Composio auth:
 
 ```bash
 claude --plugin-dir ./connect-apps-plugin
-/connect-apps:setup    # Enter your free Composio API key
+/connect-apps:setup    # Enter free Composio API key
 ```
 
-Get a free key at [platform.composio.dev](https://platform.composio.dev)
+Free key: [platform.composio.dev](https://platform.composio.dev)
+
+## Common Mistakes
+
+- Expecting real app actions without Composio setup — skills provide guidance, Composio provides execution
+- Looking for a skill that doesn't exist — check [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) for the full list
+- Installing the whole collection when you only need one skill — use `/plugin install <skill-name>@awesome-claude-skills`
