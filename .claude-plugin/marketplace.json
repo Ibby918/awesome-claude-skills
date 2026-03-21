@@ -1,0 +1,14 @@
+{
+  "name": "awesome-claude-skills",
+  "owner": { "name": "ComposioHQ" },
+  "metadata": { "description": "Curated collection of 100+ Claude skills for automation, development, data analysis and SaaS integrations." },
+  "plugins": [
+    {
+      "name": "awesome-claude-skills",
+      "source": "./awesome-claude-skills-plugin",
+      "description": "Curated collection of 100+ Claude skills for automation, development, data analysis and SaaS integrations.",
+      "author": { "name": "ComposioHQ" },
+      "category": "productivity"
+    }
+  ]
+}
