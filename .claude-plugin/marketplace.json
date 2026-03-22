@@ -1,0 +1,22 @@
+﻿{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "awesome-claude-skills",
+  "owner": {
+    "name": "ComposioHQ"
+  },
+  "metadata": {
+    "description": "100+ Claude skills for automation, development, data workflows and SaaS integrations via Composio."
+  },
+  "plugins": [
+    {
+      "name": "awesome-claude-skills",
+      "source": "./awesome-claude-skills-plugin",
+      "description": "100+ Claude skills for automation, development, data workflows and SaaS integrations via Composio.",
+      "author": {
+        "name": "ComposioHQ"
+      },
+      "category": "productivity",
+      "homepage": "https://github.com/Ibby918/awesome-claude-skills"
+    }
+  ]
+}
